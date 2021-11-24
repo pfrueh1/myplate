@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS myplate_db;
+
+CREATE DATABASE myplate_db;
