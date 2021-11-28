@@ -1,15 +1,6 @@
 const router = require('express').Router();
-<<<<<<< HEAD
 const sequelize = require('../../config/connection');
-const { Post, User, Comment, Vote } = require('../../models');
-const withAuth = require('../../utils/auth');
-
-// get all users
-router.get('/', (req, res) => {
-  console.log('======================');
-  Post.findAll({
-=======
-// const sequelize = require('../../config/connection');
+const {checkFileType, upload, storage} =  require('../../utils/multerHelpers')
 const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
@@ -20,17 +11,10 @@ router.get('/', withAuth, (req, res) => {
     where: {
       user_id: req.session.user_id
   },
->>>>>>> c28d0e864747330558435af0ef61d3a7659426e3
     attributes: [
       'id',
-      'post_url',
       'title',
-<<<<<<< HEAD
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM likes WHERE post.id = like.post_id)'), 'likes_count']
-=======
       'created_at'
->>>>>>> c28d0e864747330558435af0ef61d3a7659426e3
     ],
     include: [
       {
@@ -61,14 +45,8 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'post_url',
       'title',
-<<<<<<< HEAD
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM likes WHERE post.id = like.post_id)'), 'likes_count']
-=======
       'created_at'
->>>>>>> c28d0e864747330558435af0ef61d3a7659426e3
     ],
     include: [
       {
@@ -99,35 +77,45 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-<<<<<<< HEAD
-  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
-=======
->>>>>>> c28d0e864747330558435af0ef61d3a7659426e3
-  Post.create({
-    title: req.body.title,
-    post_url: req.body.post_url,
-    user_id: req.session.user_id
+  console.log(req)
+  upload(req.body, res, (err) => {
+    if(err) {console.log("you are at 1")
+        res.render('dashboard', {
+            msg: err
+        });
+    }else {
+        if(req.body.file == undefined){
+          console.log('you are at 2')
+          // console.log('####################req begin3################',req,'###########req end#################')
+            res.render('dashboard', {
+                msg: 'Error: No File Selected!'
+            });
+        } else {
+          console.log('you are at 3')
+            // res.render('dashboard', {
+            //     msg: 'File Uploaded!',
+            //     file: `uploads/${req.file.filename}`
+            // console.log('####################req begin3################',req.body.file,'###########req end#################')
+            // });
+            // console.log('here')
+            Post.create({
+              title: req.body.title,
+              pic_name: req.body.file.filename,
+              user_id: req.session.user_id
+            })
+            .then(dbPostData => res.json(dbPostData))
+            .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+            });
+        }
+    }
   })
-    .then(dbPostData => res.json(dbPostData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+
+    
+
 });
 
-<<<<<<< HEAD
-router.put('/likes', withAuth, (req, res) => {
-  // custom static method created in models/Post.js
-  Post.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
-    .then(updatedVoteData => res.json(updatedVoteData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
-=======
->>>>>>> c28d0e864747330558435af0ef61d3a7659426e3
 router.put('/:id', withAuth, (req, res) => {
   Post.update(
     {
@@ -153,13 +141,8 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 router.delete('/:id', withAuth, (req, res) => {
-<<<<<<< HEAD
-  console.log('id', req.params.id);
-  Post.destroy({
-=======
   Post.destroy(
     {
->>>>>>> c28d0e864747330558435af0ef61d3a7659426e3
     where: {
       id: req.params.id
     }
@@ -177,8 +160,4 @@ router.delete('/:id', withAuth, (req, res) => {
     });
 });
 
-<<<<<<< HEAD
 module.exports = router;
-=======
-module.exports = router;
->>>>>>> c28d0e864747330558435af0ef61d3a7659426e3
