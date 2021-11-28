@@ -4,14 +4,14 @@
     --tertiary-color: #faf8f8;
 }
 
-@font-face {
+/* @font-face {
     font-family: 'sailors';
     src: url('sailors-webfont.woff2') format('woff2'),
          url('sailors-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
-}
+} */
 
 /* @font-face {
     font-family: 'sailors_rough';

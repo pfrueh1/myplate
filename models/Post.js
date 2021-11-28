@@ -23,6 +23,11 @@ Post.init(
               model: 'user',
               key: 'id'
             }
+        },
+        pic_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true
         }
     },
     {

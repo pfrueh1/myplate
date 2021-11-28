@@ -2,7 +2,7 @@
 <section>
   <h2>Let's see your plate!</h2>
 
-  <form class="new-post-form"action="/plate" enctype="multipart/form-data" method="post">
+  {{!-- <form class="new-post-form"action="/plate" enctype="multipart/form-data" method="post">
     <div>
       <label for="post-title">What's on your plate?</label>
       <input type="text" id="post-title" name="post-title" />
@@ -12,7 +12,19 @@
       <label for="uploaded_file">Image</label>
     </div>
     <button type="submit" class="btn">Here's my plate!</button>
-  </form>
+  </form> --}}
+        <form action="/upload" method="POST" enctype="multipart/form-data" class="new-post-form">
+        <div class="file-field input-field">
+          <div class="btn grey">
+            <span>File</span>
+            <input name="myImage" type="file">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" name="file-path">
+          </div>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+      </form> 
 </section>
 
 
