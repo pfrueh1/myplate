@@ -77,15 +77,16 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-  upload(req, res, (err) => {
+  console.log(req)
+  upload(req.body, res, (err) => {
     if(err) {console.log("you are at 1")
         res.render('dashboard', {
             msg: err
         });
     }else {
-        if(req.file == undefined){
+        if(req.body.file == undefined){
           console.log('you are at 2')
-          console.log('####################req begin3################',req,'###########req end#################')
+          // console.log('####################req begin3################',req,'###########req end#################')
             res.render('dashboard', {
                 msg: 'Error: No File Selected!'
             });
@@ -94,7 +95,7 @@ router.post('/', withAuth, (req, res) => {
             // res.render('dashboard', {
             //     msg: 'File Uploaded!',
             //     file: `uploads/${req.file.filename}`
-            console.log('####################req begin3################',req.body.file,'###########req end#################')
+            // console.log('####################req begin3################',req.body.file,'###########req end#################')
             // });
             // console.log('here')
             Post.create({
