@@ -60,7 +60,7 @@ body {
     background-color: var(--primary-color);
 }
 
-main {
+body {
     width: 100%;
     background-image: url('./images/myplate-homepage.png'); 
     height: 600px; 
@@ -182,7 +182,7 @@ header a {
 }
 
 header a:hover {
-    color: white;
+    color: black;
     text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.5);
 
 }
@@ -228,7 +228,7 @@ main {
 
 .btn-no-style:hover {
     background: none;
-    color: white;
+    color: black;
     text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.5);
 }
 
