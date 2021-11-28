@@ -22,7 +22,11 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Post,
+<<<<<<< HEAD
         attributes: ['id', 'title', 'created_at']
+=======
+        attributes: ['id', 'title',   'created_at']
+>>>>>>> 1c2e2644c4c027da145533286e08bb415489dd65
       },
       {
         model: Comment,
@@ -54,7 +58,6 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   User.create({
     username: req.body.username,
     email: req.body.email,
@@ -76,7 +79,6 @@ router.post('/', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
-  // expects {email: 'lernantino@gmail.com', password: 'password1234'}
   User.findOne({
     where: {
       email: req.body.email
@@ -116,9 +118,6 @@ router.post('/logout', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
-
-  // pass in req.body instead to only update what's passed through
   User.update(req.body, {
     individualHooks: true,
     where: {
@@ -183,7 +182,7 @@ module.exports = router;
 //     where: {
 //         id: req.params.id
 //     },
-//     indclude: ['id', 'title', 'post_url', 'created_at'] 
+//     indclude: ['id', 'title',   'created_at'] 
 //   })
 // });
 
