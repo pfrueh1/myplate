@@ -177,10 +177,10 @@ header h1 {
 header a {
     text-decoration: none;
     font-weight: bold;
-    font-size: 50px;
-    color: var(--secondary-color);
-    text-shadow: 2px 2px 2px white;
-    border: white;
+    font-size: 60px;
+    color: var(--primary-color);
+    /* text-shadow:  3px 3px 3px #FF0000; */
+    text-shadow:  5px 5px 5px black;
 }
 
 header a:hover {
@@ -199,7 +199,7 @@ header nav ul {
     
 header nav a {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 50px;
 }
     
 header nav ul li a:hover {
