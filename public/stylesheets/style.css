@@ -179,6 +179,8 @@ header a {
     font-weight: bold;
     font-size: 50px;
     color: var(--secondary-color);
+    text-shadow: 2px 2px 2px white;
+    border: white;
 }
 
 header a:hover {
