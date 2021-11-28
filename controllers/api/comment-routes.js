@@ -11,6 +11,7 @@ router.get('/', (req, res) => {
     });
 });
 
+<<<<<<< HEAD
     router.post('/', withAuth, (req, res) => {
       // expects => {comment_text: "This is the comment", user_id: 1, post_id: 2}
       Comment.create({
@@ -20,6 +21,17 @@ router.get('/', (req, res) => {
   })
    .then(dbCommentData => res.json(dbCommentData))
      .catch(err => {
+=======
+router.post('/', withAuth, (req, res) => {
+  // expects => {comment_text: "This is the comment", user_id: 1, post_id: 2}
+  Comment.create({
+    comment_text: req.body.comment_text,
+    user_id: req.session.user_id,
+    post_id: req.body.post_id
+  })
+    .then(dbCommentData => res.json(dbCommentData))
+    .catch(err => {
+>>>>>>> c28d0e864747330558435af0ef61d3a7659426e3
       console.log(err);
       res.status(400).json(err);
     });
