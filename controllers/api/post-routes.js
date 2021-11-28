@@ -77,11 +77,6 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-<<<<<<< HEAD
-  Post.create({
-    title: req.body.title,
-    user_id: req.session.user_id
-=======
   upload(req, res, (err) => {
     if(err) {console.log("you are at 1")
         res.render('dashboard', {
@@ -114,7 +109,6 @@ router.post('/', withAuth, (req, res) => {
             });
         }
     }
->>>>>>> d152a12f60d9ae24605213cc3f25eba8110cc4be
   })
 
     
