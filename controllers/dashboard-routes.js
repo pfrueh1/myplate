@@ -1,11 +1,6 @@
 const router = require('express').Router();
-<<<<<<< HEAD
-const sequelize = require('../config/connection');
-const { Post, User, Comment, } = require('../models');
-=======
 // const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
->>>>>>> c28d0e864747330558435af0ef61d3a7659426e3
 const withAuth = require('../utils/auth');
 
 // get all posts for dashboard
@@ -20,12 +15,7 @@ router.get('/', withAuth, (req, res) => {
       'id',
       'post_url',
       'title',
-<<<<<<< HEAD
-      'created_at',
-      [sequelize.literal()]
-=======
       'created_at'
->>>>>>> c28d0e864747330558435af0ef61d3a7659426e3
     ],
     include: [
       {
@@ -58,12 +48,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       'id',
       'post_url',
       'title',
-<<<<<<< HEAD
-      'created_at',
-      [sequelize.literal()]
-=======
       'created_at'
->>>>>>> c28d0e864747330558435af0ef61d3a7659426e3
     ],
     include: [
       {
@@ -97,8 +82,4 @@ router.get('/edit/:id', withAuth, (req, res) => {
     });
 });
 
-<<<<<<< HEAD
 module.exports = router;
-=======
-module.exports = router;
->>>>>>> c28d0e864747330558435af0ef61d3a7659426e3
