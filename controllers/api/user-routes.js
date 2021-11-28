@@ -22,7 +22,7 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Post,
-        attributes: ['id', 'title', 'created_at']
+        attributes: ['id', 'title',   'created_at']
       },
       {
         model: Comment,
@@ -178,7 +178,7 @@ module.exports = router;
 //     where: {
 //         id: req.params.id
 //     },
-//     indclude: ['id', 'title', 'post_url', 'created_at'] 
+//     indclude: ['id', 'title',   'created_at'] 
 //   })
 // });
 
