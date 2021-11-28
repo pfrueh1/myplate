@@ -1,14 +1,16 @@
+
+
 async function newFormHandler(event) {
     event.preventDefault();
   
-    const title = document.querySelector('input[name="post-title"]').value;
-    const post_url = document.querySelector('input[name="post-url"]').value;
+    const post_title = document.querySelector('input[name="file-path"]').value;
+    const uploaded_file = document.querySelector('input[name="myImage"]');
   
     const response = await fetch(`/api/posts`, {
       method: 'POST',
       body: JSON.stringify({
-        title,
-        post_url
+         post_title,
+        uploaded_file
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -16,6 +18,7 @@ async function newFormHandler(event) {
     });
   
     if (response.ok) {
+      console.log("uploaded file begin",uploaded_file, "uploaded file end")
       document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
