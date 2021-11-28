@@ -77,12 +77,12 @@ Watch this demo to see the Employee Tracker in action!
 *If you have any questions, please reach out to us at*
 
 ### _Paul Frueh_ 
-![Paul Frueh Headshot](./images/paul-frueh-headshot.png)
+![Paul Frueh Headshot](./public/stylesheets/images/paul-frueh-headshot.png)
 
 Paul's Github: [@pfrueh1](https://github.com/pfrueh1/)
 
 ### _Jared Gavigan_ 
-![Jared Gavigan Headshot](./images/jared-gavigan-headshot.png)
+![Jared Gavigan Headshot](./public/stylesheets/images/jared-gavigan-headshot.png)
 
 Jared's Github: [@jargav](https://github.com/Jargav)
 
