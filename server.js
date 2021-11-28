@@ -4,6 +4,7 @@ const exphbs = require('express-handlebars');
 const path = require('path');
 const helpers = require('./utils/helpers');
 const PORT = process.env.PORT || 3001;
+const routes = require('./controllers')
 
 //init app
 const app = express();
@@ -36,9 +37,8 @@ app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, './public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-app.use(require('./controllers/'));
-
+// app.use(require('./controllers/'));
+app.use(routes);
 // set storage engine
 const storage = multer.diskStorage({
     destination: './public/uploads/',
@@ -56,23 +56,24 @@ const upload = multer({
     }
 }).single('myImage');
 
-// check File Type
-function checkFileType(file, cb){
-    //allowed ext
-    const filetypes = /jpeg|jpg|png|gif/;
-    //check ext
-    const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
-    // check mime
-    const mimetype = filetypes.test(file.mimetype);
+// moved to utils/checkFileType
+// // check File Type
+// function checkFileType(file, cb){
+//     //allowed ext
+//     const filetypes = /jpeg|jpg|png|gif/;
+//     //check ext
+//     const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+//     // check mime
+//     const mimetype = filetypes.test(file.mimetype);
 
-    if (mimetype && extname){
-        return cb(null, true);
-    } else {
-        cb('Error: Images Only!');
-    }
-}
+//     if (mimetype && extname){
+//         return cb(null, true);
+//     } else {
+//         cb('Error: Images Only!');
+//     }
+// }
 
-app.get('/', (req, res) => res. render('./layouts/main.handlebars'));
+// app.get('/', (req, res) => res.render('./layouts/main.handlebars'));
 
 app.post('/upload', (req, res) => {  
     upload(req, res, (err) => {
