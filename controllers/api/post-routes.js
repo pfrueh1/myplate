@@ -81,14 +81,16 @@ router.post('/', withAuth, (req, res) => {
   upload(req.body, res, (err) => {
     if(err) {console.log("you are at 1")
         res.render('dashboard', {
-            msg: err
+            msg: err,
+            style: 'dashboard.css'
         });
     }else {
         if(req.body.file == undefined){
           console.log('you are at 2')
           // console.log('####################req begin3################',req,'###########req end#################')
             res.render('dashboard', {
-                msg: 'Error: No File Selected!'
+                msg: 'Error: No File Selected!',
+                style: 'dashboard.css'
             });
         } else {
           console.log('you are at 3')
