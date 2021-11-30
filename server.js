@@ -79,18 +79,18 @@ const upload = multer({
 app.post('/upload', (req, res) => {  
     upload(req, res, (err) => {
         if(err) {
-            res.render('./layouts/main.handlebars', {
+            res.render('dashboard', {
                 msg: err,
                 style: feed.css
             });
         }else {
             if(req.file == undefined){
-                res.render('./layouts/main.handlebars', {
+                res.render('dashboard', {
                     msg: 'Error: No File Selected!',
                     style: feed.css
                 });
             } else {
-                res.render('./layouts/main.handlebars', {
+                res.render('dashboard', {
                     msg: 'File Uploaded!',
                     file: `uploads/${req.file.filename}`,
                     style: feed.css
