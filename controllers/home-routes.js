@@ -102,4 +102,14 @@ router.get('/login', (req, res) => {
   res.render('login', {style: 'login.css'});
 });
 
+// router.get('/', (req, res) => {
+//   if (req.session.loggedIn) {
+//     res.redirect('/');
+//     return;
+//   }
+
+//   res.render('homepage', {style: 'homepage.css'});
+// });
+
+
 module.exports = router;
