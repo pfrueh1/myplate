@@ -4,57 +4,21 @@
     --tertiary-color: #faf8f8;
 }
 
-/* @font-face {
+@font-face {
     font-family: 'sailors';
-    src: url('sailors-webfont.woff2') format('woff2'),
-         url('sailors-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    src: url('./sailors-webfont.woff2') format('woff2'),
+         url('./sailors-webfont.woff') format('woff');
+    /* font-weight: normal;
+    font-style: normal; */
 
-} */
+}
 
-/* @font-face {
-    font-family: 'sailors_rough';
-    src: url('sailors_rough-webfont.woff2') format('woff2'),
-         url('sailors_rough-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-} */
-
-/* @font-face {
-    font-family: 'sailors_slant';
-    src: url('sailors_slant-webfont.woff2') format('woff2'),
-         url('sailors_slant-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-} */
-
-/* @font-face {
-    font-family: 'sailors_condensed_slant';
-    src: url('sailors_condensed_slant-webfont.woff2') format('woff2'),
-         url('sailors_condensed_slant-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}*/
-
-/* @font-face {
-    font-family: 'sailors_condensed';
-    src: url('sailors_condensed-webfont.woff2') format('woff2'),
-         url('sailors_condensed-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}  */
-
-
-/* * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} */
+    font-family: 'sailors';
+}
 
 body {
     background-color: var(--primary-color);
@@ -62,27 +26,24 @@ body {
 
 body {
     width: 100%;
-    background-image: url('./images/myplate-homepage.png'); 
+    /* background-image: url('./images/myplate-homepage.png');  */
     height: 600px; 
-    background-position: center;
+    background-color: var(--primary-color);
+    /* background-position: center;
     background-repeat: no-repeat; 
-    background-size: cover;
-}
+    background-size: cover;*/
+} 
 
 body, html {
     height: 100%;
     padding: 0;
-    margin: 0;
-    font-family: 'sailors', arial, sans-serif;
-    /* background-color: var(--primary-color); */
-    
-    
+    margin: 0;    
 }
 
 a {
     text-decoration: none;
     color: var(--secondary-color);
-    font-weight: bold;
+    /* font-weight: bold; */
     transition: color .1s;
 }
 
@@ -175,17 +136,18 @@ header h1 {
 }
 
 header a {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 60px;
-    color: var(--primary-color);
+    font-family: 'sailors';
+    /* text-decoration: none;
+    font-weight: bold; */
+    font-size: 50px;
+    color: black;
     /* text-shadow:  3px 3px 3px #FF0000; */
-    text-shadow:  5px 5px 5px black;
+    text-shadow:  5px 5px 5px var(--primary-color);
 }
 
 header a:hover {
-    color: black;
-    text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.5);
+    color: var(--primary-color);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 
 }
     
@@ -199,7 +161,7 @@ header nav ul {
     
 header nav a {
     font-weight: bold;
-    font-size: 50px;
+    font-size: 40px;
 }
     
 header nav ul li a:hover {
@@ -284,15 +246,3 @@ main {
 .edit-post-form {
     margin-bottom: 5%;
 }
-
-/* footer {
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    padding: 1%;
-    font-size: 25px;
-    font-weight: bold;
-    color: black;
-    font-family:Arial, Helvetica, sans-serif;
-    background-color: transparent;
-} */

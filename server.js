@@ -12,6 +12,7 @@ const app = express();
 const sequelize = require('./config/connection');
 
 const session = require('express-session');
+const { Z_FILTERED } = require('zlib');
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -79,17 +80,20 @@ app.post('/upload', (req, res) => {
     upload(req, res, (err) => {
         if(err) {
             res.render('./layouts/main.handlebars', {
-                msg: err
+                msg: err,
+                style: feed.css
             });
         }else {
             if(req.file == undefined){
                 res.render('./layouts/main.handlebars', {
-                    msg: 'Error: No File Selected!'
+                    msg: 'Error: No File Selected!',
+                    style: feed.css
                 });
             } else {
                 res.render('./layouts/main.handlebars', {
                     msg: 'File Uploaded!',
-                    file: `uploads/${req.file.filename}`
+                    file: `uploads/${req.file.filename}`,
+                    style: feed.css
                 });
             }
         }
