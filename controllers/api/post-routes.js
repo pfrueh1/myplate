@@ -78,13 +78,13 @@ router.get('/:id', (req, res) => {
 
 router.post('/', withAuth, (req, res) => {
   console.log(req)
-  upload(req.body, res, (err) => {
+  upload(req, res, (err) => {
     if(err) {console.log("you are at 1")
         res.render('dashboard', {
             msg: err
         });
     }else {
-        if(req.body.file == undefined){
+        if(req.file == undefined){
           console.log('you are at 2')
           // console.log('####################req begin3################',req,'###########req end#################')
             res.render('dashboard', {
@@ -95,15 +95,18 @@ router.post('/', withAuth, (req, res) => {
             // res.render('dashboard', {
             //     msg: 'File Uploaded!',
             //     file: `uploads/${req.file.filename}`
-            // console.log('####################req begin3################',req.body.file,'###########req end#################')
+            console.log('####################req begin3################',req,'###########req end#################')
             // });
             // console.log('here')
             Post.create({
-              title: req.body.title,
-              pic_name: req.body.file.filename,
+              title: req.body.post_title,
+              pic: req.file.filename,
               user_id: req.session.user_id
             })
-            .then(dbPostData => res.json(dbPostData))
+            .then(dbPostData => {
+              res.redirect('/dashboard');
+              
+            })
             .catch(err => {
             console.log(err);
             res.status(500).json(err);

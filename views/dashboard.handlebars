@@ -13,14 +13,14 @@
     </div>
     <button type="submit" class="btn">Here's my plate!</button>
   </form> --}}
-        <form action="/upload" method="POST" enctype="multipart/form-data" class="new-post-form">
+        <form action="/api/posts" method="POST" enctype="multipart/form-data" class="new-post-form">
         <div class="file-field input-field">
           <div class="btn grey">
             <span>File</span>
             <input name="myImage" type="file">
           </div>
           <div class="file-path-wrapper">
-            <input class="file-path validate" type="text" name="file-path">
+            <input class="file-path validate" type="text" name="post_title">
           </div>
         </div>
         <button type="submit" class="btn">Submit</button>
@@ -35,11 +35,10 @@
     {{#each posts as |post|}}
     <li>
       {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
 
-<script src="/javascript/add-post.js"></script>
+{{!-- <script src="/javascript/add-post.js"></script> --}}
