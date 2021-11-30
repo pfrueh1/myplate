@@ -100,10 +100,13 @@ router.post('/', withAuth, (req, res) => {
             // console.log('here')
             Post.create({
               title: req.body.post_title,
-              pic_name: req.file.filename,
+              pic: req.file.filename,
               user_id: req.session.user_id
             })
-            .then(dbPostData => res.json(dbPostData))
+            .then(dbPostData => {
+              res.redirect('/dashboard');
+              
+            })
             .catch(err => {
             console.log(err);
             res.status(500).json(err);
