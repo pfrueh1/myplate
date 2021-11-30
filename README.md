@@ -12,7 +12,7 @@
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
-* [Demo](#demo)
+* [Demo & Deployment](#demo)
 * [Contributors](#contributors)
 
 
