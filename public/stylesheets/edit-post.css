@@ -295,9 +295,9 @@ main {
     margin-bottom: 1%;
 }
 
-.comment:nth-child(odd) {
+/* .comment:nth-child(odd) {
     background-color: #e9ecea;
-}
+} */
 
 .comment .meta {
     font-size: 90%;
