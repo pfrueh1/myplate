@@ -15,7 +15,8 @@ router.get('/', (req, res) => {
     attributes: [
       'id',
       'title',
-      'created_at'
+      'pic',
+      'created_at',
     ],
     include: [
       {
@@ -35,7 +36,7 @@ router.get('/', (req, res) => {
     .then(dbPostData => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
 
-      res.render('homepage', {
+      res.render('feed', {
         posts,
         loggedIn: req.session.loggedIn, 
         style: 'homepage.css'
