@@ -1,44 +1,53 @@
 {{!-- Using Multer language - test to see if it works! --}}
-<section>
-  <h2>Let's see your plate!</h2>
 
-  {{!-- <form class="new-post-form"action="/plate" enctype="multipart/form-data" method="post">
-    <div>
-      <label for="post-title">What's on your plate?</label>
-      <input type="text" id="post-title" name="post-title" />
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Let's see your plate!</h2>
+              {{!-- <form class="new-post-form"action="/plate" enctype="multipart/form-data" method="post">
+                <div>
+                  <label for="post-title">What's on your plate?</label>
+                  <input type="text" id="post-title" name="post-title" />
+                </div>
+                <div>
+                <input type="file" class="form-control-file" name="uploaded_file">
+                  <label for="uploaded_file">Image</label>
+                </div>
+                <button type="submit" class="btn">Here's my plate!</button>
+              </form> --}}
+          <form action="/api/posts" method="POST" enctype="multipart/form-data" class="new-post-form">
+            <div class="file-field input-field">
+              <div class="btn grey">
+                {{!-- <span>File</span> --}}
+                  <input name="myImage" type="file">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" name="post_title">
+              </div>
+              <button type="submit" class="plate-btn">Submit</button>
+            </div>
+          </form>
+      </div>
     </div>
-    <div>
-    <input type="file" class="form-control-file" name="uploaded_file">
-      <label for="uploaded_file">Image</label>
-    </div>
-    <button type="submit" class="btn">Here's my plate!</button>
-  </form> --}}
-        <form action="/api/posts" method="POST" enctype="multipart/form-data" class="new-post-form">
-        <div class="file-field input-field">
-          <div class="btn grey">
-            <span>File</span>
-            <input name="myImage" type="file">
-          </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" type="text" name="post_title">
-          </div>
-        </div>
-        <button type="submit" class="btn">Submit</button>
-      </form> 
-</section>
+
 
 
 {{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
-  <ol>
-    {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-    </li>
-    {{/each}}
-  </ol>
-</section>
+  <div class="row">
+    <div class="col-md-6">
+        <br>
+        <h2>Your Posts</h2>
+        <ol>
+          {{#each posts as |post|}}
+          <li>
+            {{> post-info post}}
+            
+            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+            {{> comments post.comments}}
+          </li>
+          {{/each}}
+        </ol>
+    </div>  
+  </div>
 {{/if}}
 
 {{!-- <script src="/javascript/add-post.js"></script> --}}
