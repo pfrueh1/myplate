@@ -17,16 +17,15 @@
 
 /* Telling entire page to use sailors with the primary background  */
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'sailors';
-    background-color: var(--primary-color);
+    /* background-color: var(--primary-color); */
 }
 
 /* need this to make yellow on the sides and not a white border on sides */
 body {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); 
+    height: 1000px;
 }
 
 
@@ -189,6 +188,8 @@ header nav a {
 main {
     padding: 2%;
     width: 100%;
+    height: 100%;
+    /* background-color: var(--primary-color); */
     
 }
 
