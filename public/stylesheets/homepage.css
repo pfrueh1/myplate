@@ -67,44 +67,44 @@ body, html {
     color: white;
 } */
 
-.create-btn {
+/* .create-btn {
     background-color: var(--primary-color);
     color: white;
-}
+} */
 
-.create-btn:hover {
+/* .create-btn:hover {
     background-color: var(--secondary-color);
     color: white;
-}
+} */
 
-.post-list {
+/* .post-list {
     margin: 0;
     padding: 0;
-}
+} */
 
-textarea, input {
+/* textarea, input {
     padding: .5%;
     border-radius: 5px;
     border: 1px solid var(--primary-color);
-}
+} */
 
-textarea:focus, input:focus {
+/* textarea:focus, input:focus {
     outline: none;
     border: 1px solid var(--primary-color);
-}
+} */
 
-textarea {
+/* textarea {
     min-width: 40%;
     min-height: 100px;
-}
+} */
 
-form > div {
+/* form > div {
     margin-bottom: 2%;
-}
+} */
 
-form label {
+/* form label {
     display: block;
-}
+} */
 
 /* .wrapper {
     width: 100%;
@@ -176,12 +176,12 @@ header nav a {
     text-shadow: none;
 } */
 
-main {
+/* main {
     flex: 1;
     padding: 2% 4%;
     background-color: var(--primary-color);
     
-}
+} */
 
 /* affects the login/logout "button" */
 .btn-no-style {
@@ -206,7 +206,7 @@ main {
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
-.delete-post-btn {
+/* .delete-post-btn {
     background-color: #d41414;
 }
 
@@ -255,4 +255,4 @@ main {
 
 .edit-post-form {
     margin-bottom: 5%;
-}
+} */

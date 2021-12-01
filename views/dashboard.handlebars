@@ -1,7 +1,6 @@
 {{!-- Using Multer language - test to see if it works! --}}
 
-    <div class="row">
-      <div class="col-md-6">
+    <section>
         <h2>Let's see your plate!</h2>
               {{!-- <form class="new-post-form"action="/plate" enctype="multipart/form-data" method="post">
                 <div>
@@ -26,28 +25,24 @@
               <button type="submit" class="plate-btn">Submit</button>
             </div>
           </form>
-      </div>
-    </div>
+    </section>     
 
 
 
 {{#if posts.length}}
-  <div class="row">
-    <div class="col-md-6">
-        <br>
-        <h2>Your Posts</h2>
-        <ol>
-          {{#each posts as |post|}}
-          <li>
-            {{> post-info post}}
-            
-            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-            {{> comments post.comments}}
-          </li>
-          {{/each}}
-        </ol>
-    </div>  
-  </div>
+          <br>
+          <h2>Your Posts</h2>
+          <ol>
+            {{#each posts as |post|}}
+            <li>
+              
+                {{> post-info post}}
+              
+                <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+                {{> comments post.comments}}
+            </li>
+            {{/each}}
+          </ol>
 {{/if}}
 
 {{!-- <script src="/javascript/add-post.js"></script> --}}
