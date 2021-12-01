@@ -179,6 +179,7 @@ header nav a {
 main {
     flex: 1;
     padding: 2% 4%;
+    background-color: var(--primary-color);
     
 }
 
