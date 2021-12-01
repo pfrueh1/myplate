@@ -6,7 +6,7 @@
     <li>
       {{> post-info post}}
     </li>
-    {{#if loggedIn}}
+    {{!-- {{#if post.loggedIn}} --}}
     <form class="comment-form">
     <div>
         <textarea name="comment-body"></textarea>
@@ -15,7 +15,7 @@
         <button type="submit">Add Comment</button>
     </div>
     </form>
-    {{/if}}
+    {{!-- {{/if}} --}}
     {{> comments post.comments}}
     {{/each}}
   </ol>
