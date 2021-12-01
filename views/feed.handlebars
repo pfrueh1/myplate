@@ -1,0 +1,23 @@
+{{#if posts.length}}
+<section>
+  <h2>All Posts</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+    </li>
+    {{#if loggedIn}}
+    <form class="comment-form">
+    <div>
+        <textarea name="comment-body"></textarea>
+    </div>
+    <div>
+        <button type="submit">Add Comment</button>
+    </div>
+    </form>
+    {{/if}}
+    {{> comments post.comments}}
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
