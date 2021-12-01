@@ -27,6 +27,7 @@
 /* need this to make yellow on the sides and not a white border on sides */
 body {
     background-color: var(--primary-color);
+    height: 1000px;
 }
 
 
@@ -219,6 +220,16 @@ h2 {
     color: black;
     font-weight: bold;
     font-size: 20px;
+}
+
+/* affects create comment button */
+.comment-btn {
+    background-color: black;
+    color: white;
+    font-family: 'sailors';
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
 /* affects submit button */
