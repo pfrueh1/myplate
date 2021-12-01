@@ -213,6 +213,12 @@ header nav ul li a:hover {
     text-shadow: none;
 }
 
+/* affects words dashboard, feed, login, logout */
+header nav {
+    background-color: transparent;
+    word-spacing: 20px;
+}
+
 main {
     flex: 1;
     padding: 2% 4%;

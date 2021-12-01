@@ -159,6 +159,7 @@ header a:hover {
 /* affects words dashboard, login, logout */
 header nav {
     background-color: transparent;
+    word-spacing: 20px;
 }
 
 /* header nav ul {
