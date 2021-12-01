@@ -156,9 +156,10 @@ header a:hover {
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* affects words dashboard, login, logout */
+/* affects words dashboard, feed, login, logout */
 header nav {
     background-color: transparent;
+    word-spacing: 20px;
 }
 
 /* header nav ul {
