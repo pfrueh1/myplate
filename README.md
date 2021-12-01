@@ -61,6 +61,12 @@ When you are logged in, you will be able to edit or delete your posts as well.
 
 ![edit and delete](./public/stylesheets/images/edit-delete.png)
 
+
+This site is also mobile responsive!
+![mobile responsive](./public/stylesheets/images/responsive.png)
+
+
+
 ## Bon Appetit!
 
 
