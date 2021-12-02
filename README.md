@@ -61,6 +61,13 @@ When you are logged in, you will be able to edit or delete your posts as well.
 
 ![edit and delete](./public/stylesheets/images/edit-delete.png)
 
+
+This site is also mobile responsive!
+
+![mobile responsive](./public/stylesheets/images/responsive.png)
+
+
+
 ## Bon Appetit!
 
 
@@ -75,7 +82,7 @@ Watch this demo to see the My Plate app in action!
 
 https://watch.screencastify.com/v/38blmvf8zeZsfHbtIpEC
 
-This app is deployed on Heroku at: https://
+This app is deployed on Heroku at: https://vast-ridge-96690.herokuapp.com/
 
 
 ### We hope you enjoy using this My Plate app! We welcome all contributions and feedback!

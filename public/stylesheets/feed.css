@@ -1,9 +1,11 @@
+/* Root colors */
 :root {
     --primary-color: #f6f894;
     --secondary-color: black;
     --tertiary-color: #faf8f8;
 }
 
+/* Sailors font added */
 @font-face {
     font-family: 'sailors';
     src: url('./sailors-webfont.woff2') format('woff2'),
@@ -13,45 +15,45 @@
 
 }
 
+/* Telling entire page to use sailors with the primary background  */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'sailors';
-}
-
-body {
     background-color: var(--primary-color);
 }
 
+/* need this to make yellow on the sides and not a white border on sides */
 body {
+    background-color: var(--primary-color);
+    height: 1000px;
+}
+
+
+/* body {
     width: 100%;
-    /* background-image: url('./images/myplate-homepage.png');  */
     height: 600px; 
-    background-color: var(--primary-color);
-    /* background-position: center;
-    background-repeat: no-repeat; 
-    background-size: cover;*/
-} 
+} */
 
 body, html {
     height: 100%;
     padding: 0;
-    margin: 0;    
+    margin: 0;  
+    background-color: var(--primary-color);  
 }
 
-a {
+/* a {
     text-decoration: none;
     color: var(--secondary-color);
-    /* font-weight: bold; */
     transition: color .1s;
-}
+} */
 
-a:hover {
+/* a:hover {
     color: var(--primary-color);
-}
+} */
 
-button {
+/* button {
     background-color: var(--secondary-color);
     border: 0;
     padding: 1%;
@@ -60,12 +62,12 @@ button {
     transition: background-color .1s;
     cursor: pointer;
     border-radius: 5px;
-}
+} */
 
-button:hover {
+/* button:hover {
     background-color: var(--secondary-color);
     color: white;
-}
+} */
 
 .create-btn {
     background-color: var(--primary-color);
@@ -106,16 +108,16 @@ form label {
     display: block;
 }
 
-.wrapper {
+/* .wrapper {
     width: 100%;
     min-height: 100%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-}
+} */
 
-
+/* header that holds the home, dashboard, login, logout */
 header {
     margin: 0;
     padding: 25px;
@@ -131,72 +133,126 @@ header {
     top: 0;
 }
 
+
+/* affects the word HOME */
 header h1 {
-    font-size: 50px;
-    font-weight: bold;
-    color: var(--secondary-color);
-    margin: 0;
+    background-color: transparent;
 }
 
+/* affects the word HOME */
 header a {
     font-family: 'sailors';
+    font-weight: bold;
     /* text-decoration: none;
     font-weight: bold; */
-    font-size: 50px;
+    font-size: 40px;
     color: black;
     /* text-shadow:  3px 3px 3px #FF0000; */
     text-shadow:  5px 5px 5px var(--primary-color);
+    background-color: transparent;
 }
 
+/* affects the word HOME upon hover */
 header a:hover {
-    color: var(--primary-color);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-
+    color: black;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
-    
-header nav ul {
+
+/* affects words dashboard, feed, login, logout */
+header nav {
+    background-color: transparent;
+    word-spacing: 20px;
+}
+
+/* header nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     list-style: none;
-}
-    
+    background-color: transparent;
+} */
+
+/* affects the word DASHBOARD */
 header nav a {
     font-weight: bold;
-    font-size: 40px;
+    font-size: 20px;
+    background-color: transparent;
 }
     
-header nav ul li a:hover {
-    background: var(--secondary-color);
+/* header nav ul li a:hover {
+    background-color: transparent;
     color: black;
     border-radius: 15px;
     text-shadow: none;
-}
+} */
 
+/* affects all side margins */
 main {
-    flex: 1;
-    padding: 2% 4%;
+    padding: 2%;
+    width: 100%;
     
 }
 
+/* affects the login/logout "button" */
 .btn-no-style {
-    background: none;
     border: none;
     padding: 0;
     cursor: pointer;
-    text-decoration: none;
     color: black;
-    font-size: 20px;
+    font-size: 15px;
+    font-family: 'sailors';
     font-weight: bold;
     transition: color .1s;
     margin-left: 16px;
+    background-color: transparent;
+    text-shadow:  5px 5px 5px var(--primary-color);
 }
 
+/* affects the login/logout "button" */
 .btn-no-style:hover {
-    background: none;
+    background-color: transparent;
     color: black;
-    text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* affects the "lets see your plate" "your posts" */
+h2 {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* affects create comment button */
+.comment-btn {
+    background-color: black;
+    color: white;
+    font-family: 'sailors';
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* affects submit button */
+.plate-btn {
+    background-color: black;
+    color: white;
+    font-family: 'sailors';
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+
+.file-path {
+    background-color: white;
 }
 
 .delete-post-btn {
@@ -230,16 +286,18 @@ main {
 .comment {
     padding: 1%;
     margin-bottom: 1%;
+    font-size: 11px;
 }
 
-.comment:nth-child(odd) {
-    background-color: #e9ecea;
-}
+/* separates comments by every other one with color */
+/* .comment:nth-child(odd) {
+} */
 
 .comment .meta {
     font-size: 90%;
     margin-bottom: .5%;
     opacity: .6;
+    background-color: transparent;
 }
 
 .new-post-form input {
