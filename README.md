@@ -80,7 +80,7 @@ Copyright © 2021
 ## Demo & Deployment
 Watch this demo to see the My Plate app in action!
 
-https://watch.screencastify.com/v/38blmvf8zeZsfHbtIpEC
+https://watch.screencastify.com/v/3PM9rRCea7ejyFxAFAuA
 
 This app is deployed on Heroku at: https://vast-ridge-96690.herokuapp.com/
 
