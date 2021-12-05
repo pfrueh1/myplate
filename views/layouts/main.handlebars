@@ -10,7 +10,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     />
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/{{style}}">
 </head>
 
 <body>
@@ -22,6 +22,7 @@
         <nav>
           {{#if loggedIn}}
           <a href="/dashboard">DASHBOARD</a>
+          <a href="/feed">FEED</a>
           <button id="logout" class="btn-no-style">LOGOUT</button>
           {{else}}
           <a href="/login">LOGIN</a>

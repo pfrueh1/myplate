@@ -24,7 +24,7 @@ Post.init(
               key: 'id'
             }
         },
-        pic_name: {
+        pic: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true
