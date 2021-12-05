@@ -3,6 +3,7 @@ const sequelize = require('../../config/connection');
 const {checkFileType, upload, storage} =  require('../../utils/multerHelpers')
 const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
+const {uploadFile} = require('../../utils/s3')
 
 // get all users
 router.get('/', withAuth, (req, res) => {
@@ -77,34 +78,28 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-  console.log(req)
   upload(req, res, (err) => {
-    if(err) {console.log("you are at 1")
+    const file = req.file
+    if(err) {
         res.render('dashboard', {
             msg: err,
             style: 'dashboard.css'
         });
     }else {
         if(req.file == undefined){
-          console.log('you are at 2')
-          // console.log('####################req begin3################',req,'###########req end#################')
             res.render('dashboard', {
                 msg: 'Error: No File Selected!',
                 style: 'dashboard.css'
             });
         } else {
-          console.log('you are at 3')
-            // res.render('dashboard', {
-            //     msg: 'File Uploaded!',
-            //     file: `uploads/${req.file.filename}`
-            console.log('####################req begin3################',req,'###########req end#################')
-            // });
-            // console.log('here')
-            Post.create({
+             uploadFile(file)
+            .then( result => {       
+              Post.create({
               title: req.body.post_title,
-              pic: req.file.filename,
+              pic: result.Location,
               user_id: req.session.user_id
-            })
+            })})
+
             .then(dbPostData => {
               res.redirect('/dashboard');
               
