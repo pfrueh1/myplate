@@ -1,0 +1,298 @@
+:root {
+    --primary-color: #f6f894;
+    --secondary-color: black;
+    --tertiary-color: #faf8f8;
+}
+
+/* @font-face {
+    font-family: 'sailors';
+    src: url('sailors-webfont.woff2') format('woff2'),
+         url('sailors-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+} */
+
+/* @font-face {
+    font-family: 'sailors_rough';
+    src: url('sailors_rough-webfont.woff2') format('woff2'),
+         url('sailors_rough-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+} */
+
+/* @font-face {
+    font-family: 'sailors_slant';
+    src: url('sailors_slant-webfont.woff2') format('woff2'),
+         url('sailors_slant-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+} */
+
+/* @font-face {
+    font-family: 'sailors_condensed_slant';
+    src: url('sailors_condensed_slant-webfont.woff2') format('woff2'),
+         url('sailors_condensed_slant-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}*/
+
+/* @font-face {
+    font-family: 'sailors_condensed';
+    src: url('sailors_condensed-webfont.woff2') format('woff2'),
+         url('sailors_condensed-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}  */
+
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+body {
+    background-color: var(--primary-color);
+}
+
+body {
+    width: 100%;
+    background-image: url('./images/myplate-homepage.png'); 
+    height: 600px; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+body, html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'sailors', arial, sans-serif;
+    /* background-color: var(--primary-color); */
+    
+    
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: bold;
+    transition: color .1s;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+button {
+    background-color: var(--secondary-color);
+    border: 0;
+    padding: 1%;
+    color: white;
+    font-weight: bold;
+    transition: background-color .1s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.create-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.create-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.post-list {
+    margin: 0;
+    padding: 0;
+}
+
+textarea, input {
+    padding: .5%;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+}
+
+textarea:focus, input:focus {
+    outline: none;
+    border: 1px solid var(--primary-color);
+}
+
+textarea {
+    min-width: 40%;
+    min-height: 100px;
+}
+
+form > div {
+    margin-bottom: 2%;
+}
+
+form label {
+    display: block;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+header {
+    margin: 0;
+    padding: 25px;
+    background-color: transparent;
+    display: flex; 
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+header h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+header a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 60px;
+    color: var(--primary-color);
+    /* text-shadow:  3px 3px 3px #FF0000; */
+    text-shadow:  5px 5px 5px black;
+}
+
+header a:hover {
+    color: black;
+    text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.5);
+
+}
+    
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+    
+header nav a {
+    font-weight: bold;
+    font-size: 50px;
+}
+    
+header nav ul li a:hover {
+    background: var(--secondary-color);
+    color: black;
+    border-radius: 15px;
+    text-shadow: none;
+}
+
+main {
+    flex: 1;
+    padding: 2% 4%;
+    
+}
+
+.btn-no-style {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    transition: color .1s;
+    margin-left: 16px;
+}
+
+.btn-no-style:hover {
+    background: none;
+    color: black;
+    text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.5);
+}
+
+.delete-post-btn {
+    background-color: #d41414;
+}
+
+.delete-post-btn:hover {
+    background-color: #ff643d;
+}
+
+.post {
+    margin-bottom: 2%;
+    line-height: 150%;
+}
+
+.post .title span {
+    font-style: italic;
+    font-size: 90%;
+    color: #7d7d7d;
+}
+
+.edit-link {
+    display: block;
+    margin: -1.5% 0 2% 0;
+}
+
+.comment-form {
+    margin-bottom: 5%;
+}
+
+.comment {
+    padding: 1%;
+    margin-bottom: 1%;
+}
+
+.comment:nth-child(odd) {
+    background-color: #e9ecea;
+}
+
+.comment .meta {
+    font-size: 90%;
+    margin-bottom: .5%;
+    opacity: .6;
+}
+
+.new-post-form input {
+    width: 300px;
+}
+
+.edit-post-form {
+    margin-bottom: 5%;
+}
+
+/* footer {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 1%;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: transparent;
+} */
