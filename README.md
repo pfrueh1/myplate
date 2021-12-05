@@ -11,6 +11,7 @@
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
+* [Future Development](#future-developmet)
 * [License](#license)
 * [Demo & Deployment](#demo)
 * [Contributors](#contributors)
@@ -56,7 +57,6 @@ While you are signed in, you will also have access to comment on your post or ot
 
 ![Add comment](./public/stylesheets/images/add-comment.png)
 
-
 When you are logged in, you will be able to edit or delete your posts as well.
 
 ![edit and delete](./public/stylesheets/images/edit-delete.png)
@@ -66,7 +66,10 @@ This site is also mobile responsive!
 
 ![mobile responsive](./public/stylesheets/images/responsive.png)
 
+## Future Development
+We are currently working on the ability of any user to be able to comment on any post on the feed page. Right now, the user can only comment on their own posts. Stay tuned!
 
+![comment on feed](./public/stylesheets/images/feed-comments.png)
 
 ## Bon Appetit!
 
