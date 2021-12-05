@@ -101,6 +101,6 @@ app.post('/upload', (req, res) => {
 });
 
 // turn on connection to db and server
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Now listening on Port ${PORT}`));
 });
