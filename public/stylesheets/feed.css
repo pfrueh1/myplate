@@ -283,6 +283,10 @@ img {
     margin-bottom: 5%;
 }
 
+textarea {
+    background-color: white;
+}
+
 .comment {
     padding: 1%;
     margin-bottom: 1%;
