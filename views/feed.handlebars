@@ -6,16 +6,14 @@
     <li>
       {{> post-info post}}
     </li>
-    {{!-- {{#if post.loggedIn}} --}}
-    {{!-- <form class="comment-form">
+    <form class="comment-form">
     <div>
         <textarea name="comment-body"></textarea>
     </div>
-    <div> --}}
+    <div>
         <button type="submit" class="comment-btn">Add Comment</button>
-    {{!-- </div>
-    </form> --}}
-    {{!-- {{/if}} --}}
+    </div>
+    </form>
     {{> comments post.comments}}
     {{/each}}
   </ol>
