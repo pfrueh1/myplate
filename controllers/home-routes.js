@@ -34,10 +34,11 @@ router.get('/', (req, res) => {
   })
     .then(dbPostData => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
-
+      console.log(req.session)
       res.render('homepage', {
         posts,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn, 
+        style: 'homepage.css'
       });
     })
     .catch(err => {
@@ -82,7 +83,8 @@ router.get('/post/:id', (req, res) => {
 
       res.render('single-post', {
         post,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        style: 'single-post.css'
       });
     })
     .catch(err => {
@@ -97,7 +99,17 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('login');
+  res.render('login', {style: 'login.css'});
 });
+
+// router.get('/', (req, res) => {
+//   if (req.session.loggedIn) {
+//     res.redirect('/');
+//     return;
+//   }
+
+//   res.render('homepage', {style: 'homepage.css'});
+// });
+
 
 module.exports = router;
