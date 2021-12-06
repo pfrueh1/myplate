@@ -6,14 +6,14 @@
     <li>
       {{> post-info post}}
     </li>
-    <form class="comment-form">
+    {{!-- <form class="comment-form">
     <div>
         <textarea name="comment-body"></textarea>
     </div>
     <div>
         <button type="submit" class="comment-btn">Add Comment</button>
     </div>
-    </form>
+    </form> --}}
     {{> comments post.comments}}
     {{/each}}
   </ol>
